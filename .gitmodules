@@ -1,0 +1,18 @@
+[submodule "plugins/zsh-listenat"]
+	path = plugins/zsh-listenat
+	url = https://github.com/ppcamp/zsh-listenat.git
+[submodule "plugins/zsh-lsi"]
+	path = plugins/zsh-lsi
+	url = https://github.com/ppcamp/zsh-lsi.git
+[submodule "plugins/zsh-pet"]
+	path = plugins/zsh-pet
+	url = https://github.com/ppcamp/zsh-pet.git
+[submodule "plugins/zsh-trash"]
+	path = plugins/zsh-trash
+	url = https://github.com/ppcamp/zsh-trash.git
+[submodule "plugins/zsh-fzf-rg"]
+	path = plugins/zsh-fzf-rg
+	url = https://github.com/ppcamp/zsh-fzf-rg.git
+[submodule "plugins/fzf-tab"]
+	path = plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab.git
