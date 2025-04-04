@@ -19,3 +19,6 @@ bindkey '^H' backward-kill-word # ctrl+backspace to kill word
 copy-lbuffer() { echo -n "$LBUFFER" | xcp && LBUFFER='' }
 zle -N copy-lbuffer copy-lbuffer # register widget to copy
 bindkey '^[w' copy-lbuffer       # alt+w copy
+
+bindkey '^I' menu-complete  # TAB cycles forward
+bindkey '^[[Z' reverse-menu-complete  # Shift+TAB cycles backward

@@ -1,14 +1,20 @@
+# vim: ts=2 sts=2 sw=2 et
+
 export ZEN="${0:a:h}"
+export ZINIT_HOME=$ZEN/zinit
 
-autoload -U compinit
+# load utils
+source "${ZINIT_HOME}/zinit.zsh"
+source $ZEN/utils/loaders.zsh
 
-source "$ZEN/config/paths.zsh"
-source "$ZEN/config/configs.zsh"
-source "$ZEN/config/completions.zsh"
-source "$ZEN/config/plugins.zsh"
-source "$ZEN/config/aliases.zsh"
-source "$ZEN/config/functions.zsh"
-source "$ZEN/config/shortcuts.zsh"
+source "$ZEN/loaders/paths.zsh"
+source "$ZEN/loaders/configs.zsh"
+source "$ZEN/loaders/plugins.zsh"
+source "$ZEN/loaders/shortcuts.zsh"
+source "$ZEN/loaders/snippets.zsh"
+
+unset_all # cleanup utils loading
 
 eval "$(starship init zsh)"
-alias sc='source ~/.zshrc_f'
+eval "$(zoxide init zsh)"
+

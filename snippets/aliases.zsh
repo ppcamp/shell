@@ -86,3 +86,7 @@ alias pd='podman'
 
 # difft
 alias dift='difft'
+
+alias sc='source'
+alias test_omzsh='time ZDOTDIR=$HOME/omzsh/ zsh -i -c exit'
+alias test_sh='time ZDOTDIR=$HOME zsh -i -c exit'

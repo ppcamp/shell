@@ -1,18 +1,30 @@
-[submodule "plugins/zsh-listenat"]
-	path = plugins/zsh-listenat
-	url = https://github.com/ppcamp/zsh-listenat.git
-[submodule "plugins/zsh-lsi"]
-	path = plugins/zsh-lsi
-	url = https://github.com/ppcamp/zsh-lsi.git
-[submodule "plugins/zsh-pet"]
-	path = plugins/zsh-pet
-	url = https://github.com/ppcamp/zsh-pet.git
-[submodule "plugins/zsh-trash"]
-	path = plugins/zsh-trash
-	url = https://github.com/ppcamp/zsh-trash.git
+[submodule "zinit"]
+	path = zinit
+	url = https://github.com/zdharma-continuum/zinit.git
+[submodule "plugins/zsh-autosuggestions"]
+	path = plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "plugins/zsh-syntax-highlighting"]
+	path = plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "plugins/zsh-completions"]
+	path = plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
+[submodule "plugins/fzf-git"]
+	path = plugins/fzf-git
+	url = https://github.com/ppcamp/fzf-git
 [submodule "plugins/zsh-fzf-rg"]
 	path = plugins/zsh-fzf-rg
-	url = https://github.com/ppcamp/zsh-fzf-rg.git
-[submodule "plugins/fzf-tab"]
-	path = plugins/fzf-tab
-	url = https://github.com/Aloxaf/fzf-tab.git
+	url = https://github.com/ppcamp/zsh-fzf-rg
+[submodule "plugins/zsh-listenat"]
+	path = plugins/zsh-listenat
+	url = https://github.com/ppcamp/zsh-listenat
+[submodule "plugins/zsh-lsi"]
+	path = plugins/zsh-lsi
+	url = https://github.com/ppcamp/zsh-lsi
+[submodule "plugins/zsh-trash"]
+	path = plugins/zsh-trash
+	url = https://github.com/ppcamp/zsh-trash
+[submodule "plugins/zsh-pet"]
+	path = plugins/zsh-pet
+	url = https://github.com/ppcamp/zsh-pet

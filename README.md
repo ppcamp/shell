@@ -4,8 +4,8 @@ Shell config for my personal use
 
 ### TODO
 
-- [ ] improve load performance against omzshc config
 - [ ] fzf-tab not working (https://github.com/Aloxaf/fzf-tab)
+- [x] improve load performance against omzshc config
 - [x] fzf completions not working
 - [x] fix paths wrapper import
 

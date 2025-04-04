@@ -16,7 +16,6 @@ add_path_if_exist() {
   fi
 }
 
-# FIXME: not working properly
 add_path_if_exec() {
   if [ ! -z "$(command -v $1)" ]; then
     local path_dir

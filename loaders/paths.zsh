@@ -1,7 +1,5 @@
 # vim: ts=2 sts=2 sw=2 et:
 
-source $ZEN/utils/loaders.zsh
-
 
 ############################## PATH
 # set PATH so it includes user's private bin if it exists
@@ -32,5 +30,3 @@ add_path_if_exec 'node' '$(npm config get prefix)/bin'
 ############################## python env
 load_if_exist "$HOME/.local/venv/bin/activate"
 
-
-unset_all # cleanup
