@@ -17,4 +17,3 @@ unset_all # cleanup utils loading
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
-

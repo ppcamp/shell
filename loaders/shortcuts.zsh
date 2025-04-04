@@ -15,6 +15,7 @@ bindkey '^y' forward-word # accept word suggestion
 bindkey '^ ' autosuggest-accept # accept suggestion
 
 bindkey '^H' backward-kill-word # ctrl+backspace to kill word
+bindkey '^[[3;5~' kill-word     # ctrl+delete to kill word
 
 copy-lbuffer() { echo -n "$LBUFFER" | xcp && LBUFFER='' }
 zle -N copy-lbuffer copy-lbuffer # register widget to copy
@@ -22,3 +23,7 @@ bindkey '^[w' copy-lbuffer       # alt+w copy
 
 bindkey '^I' menu-complete  # TAB cycles forward
 bindkey '^[[Z' reverse-menu-complete  # Shift+TAB cycles backward
+
+# Move forward/backward by a word
+bindkey '^[[1;5C' forward-word       # Ctrl + Right
+bindkey '^[[1;5D' backward-word      # Ctrl + Left

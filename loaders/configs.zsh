@@ -2,8 +2,11 @@
 #                               Set up the prompt
 
 # Load completions
-fpath+=("$ZEN/completions")
-fpath+=("$ZEN/plugins/zsh-completions/src")
+# INFO: already done by carapace (see bottom of this file)
+fpath+=(
+  "$ZEN/completions"
+  "$ZEN/plugins/zsh-completions/src"
+)
 
 # Use modern completion system
 autoload -Uz compinit && compinit
@@ -54,3 +57,12 @@ else
     export VISUAL='vim'
     export EDITOR='vim'
 fi
+
+################################################################################
+#                                 Load carapace
+# carapace-sh.github.io
+# export CARAPACE_BRIDGES='fzf'
+# export CARAPACE_BRIDGES='zsh,inshellisense' # optional
+# zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+# zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'external commands'
+# source <(carapace _carapace zsh)

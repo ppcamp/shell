@@ -57,10 +57,6 @@ alias checkconn='ping 8.8.8.8'
 
 # Copy alternatives
 #alias xcp='xclip -selection clipboard' # for linux (install by apt)
-#alias xcp=clip.exe # for wsl
-#alias xpb='powershell.exe -Command "Get-Clipboard"'
-# sometimes you may want to check if the program is an alias or not, use "which"
-# for this
 alias xcp='clipcopy' # for linux (install by apt) -- clipcopy can be defined as
 alias xpb='clippaste'
 

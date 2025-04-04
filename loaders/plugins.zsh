@@ -22,8 +22,12 @@ local load_plugins() {
         continue
       fi
 
+      # wait  -> delay til full startup
+      # lucid -> prevents Zinit from printing loading messages for this plugin
       zinit ice wait lucid
       zinit light "$plugin"
+      
+      # zinit load "$plugin"
       # load_if_exist "$plugin/$plugin_name.plugin.zsh"
     fi
   done
@@ -54,6 +58,7 @@ local PLUGINS=(
   "$ZEN/plugins/zsh-lsi"
   "$ZEN/plugins/zsh-pet"
   "$ZEN/plugins/zsh-trash"
+  # "Aloxaf/fzf-tab"
   # "marlonrichert/zsh-autocomplete"
   # "zsh-users/zsh-syntax-highlighting"
 )
