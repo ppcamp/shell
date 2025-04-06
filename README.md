@@ -4,7 +4,9 @@ Shell config for my personal use
 
 ### TODO
 
-- [ ] fzf-tab not working (https://github.com/Aloxaf/fzf-tab)
+- [ ] add the others dotfiles
+- [ ] add scripts to install tools
+- [ ] remove submodules, since they are not needed anymore (zinit support)
 - [x] improve load performance against omzshc config
 - [x] fzf completions not working
 - [x] fix paths wrapper import
