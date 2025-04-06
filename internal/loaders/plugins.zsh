@@ -13,14 +13,13 @@ local PLUGINS=(
   "$FOLDER/zoxide"
   "$FOLDER/zsh-fzf-rg"
   "$FOLDER/zsh-listenat"
-  "$FOLDER/zsh-lsi"
   "$FOLDER/zsh-pet"
   "$FOLDER/zsh-trash"
 
   "bobsoppe/zsh-ssh-agent" # SSH agent
-  # "jeffreytse/zsh-vi-mode"
+  # "$FOLDER/zsh-lsi"           # no needed, since eza already does by `eza -lo`
+  # "jeffreytse/zsh-vi-mode"    # vi mode improved
   # "Aloxaf/fzf-tab"
-  # "marlonrichert/zsh-autocomplete"
   # "zsh-users/zsh-syntax-highlighting"
 )
 

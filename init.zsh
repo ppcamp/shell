@@ -11,8 +11,8 @@ local loaders="$ZEN/internal/"
 # needs to be loaded in this order
 source "$loaders/loaders/paths.zsh"     # 1
 source "$loaders/configs/configs.zsh"   # 2
-source "$loaders/loaders/plugins.zsh"   # 3
-source "$loaders/loaders/snippets.zsh"  # 4
+source "$loaders/loaders/snippets.zsh"  # 3
+source "$loaders/loaders/plugins.zsh"   # 4
 source "$loaders/configs/shortcuts.zsh" # 5
 
 unset_all # cleanup utils loading
