@@ -29,4 +29,3 @@ add_path_if_exec 'node' '$(npm config get prefix)/bin'
 
 ############################## python env
 load_if_exist "$HOME/.local/venv/bin/activate"
-

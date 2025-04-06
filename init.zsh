@@ -5,13 +5,15 @@ export ZINIT_HOME=$ZEN/zinit
 
 # load utils
 source "${ZINIT_HOME}/zinit.zsh"
-source $ZEN/utils/loaders.zsh
+source $ZEN/internal/utils/loaders.zsh
 
-source "$ZEN/loaders/paths.zsh"
-source "$ZEN/loaders/configs.zsh"
-source "$ZEN/loaders/plugins.zsh"
-source "$ZEN/loaders/shortcuts.zsh"
-source "$ZEN/loaders/snippets.zsh"
+local loaders="$ZEN/internal/"
+# needs to be loaded in this order
+source "$loaders/loaders/paths.zsh"     # 1
+source "$loaders/configs/configs.zsh"   # 2
+source "$loaders/loaders/plugins.zsh"   # 3
+source "$loaders/loaders/snippets.zsh"  # 4
+source "$loaders/configs/shortcuts.zsh" # 5
 
 unset_all # cleanup utils loading
 

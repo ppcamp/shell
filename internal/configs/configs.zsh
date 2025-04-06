@@ -4,20 +4,27 @@
 # Load completions
 # INFO: already done by carapace (see bottom of this file)
 fpath+=(
-  "$ZEN/completions"
-  "$ZEN/plugins/zsh-completions/src"
+  "$ZEN/internal/completions"
+  "$ZEN/internal/plugins/zsh-completions/src"
 )
 
 # Use modern completion system
 autoload -Uz compinit && compinit
 
 # Use emacs keybindings even if our EDITOR is set to vi
-# bindkey -e
+bindkey -v
 
-setopt histignorealldups sharehistory
-setopt EXTENDED_GLOB # used to allow ^ negative glob
+
+setopt AUTO_CD             # cd to a directory if the name is given
+setopt AUTO_PUSHD          # automatically push dirs to stack on cd
+setopt PUSHD_IGNORE_DUPS   # don't push duplicates to stack
+setopt PUSHD_MINUS         # popd with - goes to last dir
+setopt PUSHD_SILENT        # don't show pushd output
+setopt PUSHD_TO_HOME       # pushd with no args goes to $HOME
+setopt EXTENDED_GLOB       # used to allow ^ negative glob
 setopt interactivecomments # allow comments in shell
-setopt NO_BANG_HIST # allow to use ! to see declarative arrays keys
+setopt NO_BANG_HIST        # allow to use ! to see declarative arrays keys
+setopt histignorealldups sharehistory
 
 # thanks to https://thevaluable.dev/zsh-completion-guide-examples/
 zstyle ':completion:*' use-cache on
@@ -26,8 +33,8 @@ zstyle ':completion:*' cache-path "\$XDG_CACHE_HOME/zsh/.zcompcache"
 # zstyle ':completion:*' menu select=long
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt '%SScrolling completions: %p%s'
-eval "$(dircolors -b)"
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+eval "$(dircolors -b)" # color suggestions
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 zstyle ':completion:*:make:*:targets' call-command true
 zstyle ':completion:*:*:make:*' tag-order 'targets'
@@ -42,27 +49,6 @@ zstyle ':completion:*' group-name '' # Group similar results together
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-################################################################################
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=$HOME/.zsh_history
 
+# WARN: https://github.com/disrupted/dotfiles/blob/master/.zshrc
 
-# This file is sourced by zshrc
-if [ command -v nvim >/dev/null 2>&1 ]; then
-    export VISUAL='nvim'
-    export EDITOR='nvim'
-else
-    export VISUAL='vim'
-    export EDITOR='vim'
-fi
-
-################################################################################
-#                                 Load carapace
-# carapace-sh.github.io
-# export CARAPACE_BRIDGES='fzf'
-# export CARAPACE_BRIDGES='zsh,inshellisense' # optional
-# zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-# zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'external commands'
-# source <(carapace _carapace zsh)
