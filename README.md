@@ -2,10 +2,31 @@
 Shell config for my personal use
 
 
+[Suggestted programs](https://gist.github.com/ppcamp/91dd1fc9ae5f3c78026617720e26795e)
+
+## Installation
+
+```sh
+cd $HOME/.config
+
+git clone https://github.com/ppcamp/shell.git
+
+mv ~/.zshrc{,.bak}
+
+# while in the folder where you cloned this repo
+echo "source $PWD/shell/init.zsh" > ~/.zshrc
+```
+
+> [!NOTE]
+> 
+> Must be cloned directly in the folder that you plan to keep it, and then
+> replace the `~/.zshrc` for this one.
+
+
 ### TODO
 
 - [ ] add the others dotfiles
-- [ ] add scripts to install tools
+- [x] add scripts to install tools
 - [x] remove submodules, since they are not needed anymore (zinit support)
 - [x] improve load performance against omzshc config
 - [x] fzf completions not working
