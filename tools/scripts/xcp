@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# alias xcp='xclip -selection clipboard' # for linux (install by apt)
+# alias xcp='clipcopy' # for linux (install by apt)
+
+if [ -z $WSL_DISTRO_NAME ]; then
+    clipcopy $@
+else
+    clip.exe $@
+fi

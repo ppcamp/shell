@@ -2,15 +2,23 @@
 
 load_if_exist() {
   local file="$1"
-  if [[ -f "$file" ]]; then
+  if [[ -f $file ]]; then
     source "$file"
     # echo "Loaded if exist: $file"
   fi
 }
 
+load_snippet_if_exist() {
+  local file="$1"
+  if [[ -f $file ]]; then
+    zinit snippet "$file" || true
+    # echo "Loaded snippet if exist: $file"
+  fi
+}
+
 add_path_if_exist() {
   local dir="$1"
-  if [[ -d "$dir" ]]; then
+  if [[ -d $dir ]]; then
     export PATH="$dir:$PATH"
     # echo "Added to PATH: $dir"
   fi
@@ -25,7 +33,6 @@ add_path_if_exec() {
     # echo "Added to PATH if exec: $path_dir"
   fi
 }
-
 
 unset_all() {
   unset -f load_if_exist

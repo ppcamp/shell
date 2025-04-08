@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# alias xpb='clippaste'
+
+if [ -z $WSL_DISTRO_NAME ]; then
+    clippaste $@
+else
+    powershell.exe -Command "Get-Clipboard" $@
+fi
