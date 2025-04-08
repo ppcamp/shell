@@ -34,9 +34,10 @@ add_path_if_exec() {
   fi
 }
 
-unset_all() {
+deinit_loaders() {
   unset -f load_if_exist
   unset -f add_path_if_exist
   unset -f add_path_if_exec
-  unset -f unset_all
+  unset -f load_snippet_if_exist
+  unset -f deinit_loaders
 }
