@@ -1,9 +1,15 @@
 #!/bin/sh
 
-# alias xpb='clippaste'
 
 if [ -z $WSL_DISTRO_NAME ]; then
-    clippaste $@
+    if type clippaste &> /dev/null; then
+        # alias xpb='clippaste'
+        clippaste $@
+    else
+        # alias xcp='xclip -selection clipboard' # for linux (install by apt)
+        # this is the default for ubuntu
+        xclip -selection clipboard $@ -o
+    fi
 else
     powershell.exe -Command "Get-Clipboard" $@
 fi
