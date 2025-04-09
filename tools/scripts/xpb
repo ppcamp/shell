@@ -1,8 +1,7 @@
-#!/bin/sh
-
+#!/bin/bash
 
 if [ -z $WSL_DISTRO_NAME ]; then
-    if type clippaste &> /dev/null; then
+    if type clippaste &>/dev/null; then
         # alias xpb='clippaste'
         clippaste $@
     else
