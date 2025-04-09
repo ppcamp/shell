@@ -21,9 +21,12 @@ setup-kitty: ## Update kitty conf
 	@echo "Update kitty conf"
 	curl -Ls $(KITTY_GIST_FILE)/kitty.conf > ~/.config/kitty/kitty.conf
 
+
+setup-terminal: ## Update terminal choice (default terminal emulator)
 	@echo "Change default terminal for gnome"
 	sudo update-alternatives --config x-terminal-emulator
 
+kitty-change-theme: ## Change kitty theme
 	@echo "Change theme"
 	kitty +kitten themes
 
