@@ -5,7 +5,9 @@ load_if_exist() {
   if [[ -f $file ]]; then
     source "$file"
     # echo "Loaded if exist: $file"
+    return 0
   fi
+  return 1
 }
 
 load_snippet_if_exist() {
@@ -13,7 +15,9 @@ load_snippet_if_exist() {
   if [[ -f $file ]]; then
     zinit snippet "$file" || true
     # echo "Loaded snippet if exist: $file"
+    return 0
   fi
+  return 1
 }
 
 add_path_if_exist() {
@@ -21,17 +25,20 @@ add_path_if_exist() {
   if [[ -d $dir ]]; then
     export PATH="$dir:$PATH"
     # echo "Added to PATH: $dir"
+    return 0
   fi
+  return 1
 }
 
 add_path_if_exec() {
-  if [ ! -z "$(command -v $1)" ]; then
+  if type "$1" &>/dev/null; then
     local path_dir
     eval "path_dir=$2"
-
     export PATH="$PATH:$path_dir"
     # echo "Added to PATH if exec: $path_dir"
+    return 0
   fi
+  return 1
 }
 
 deinit_loaders() {

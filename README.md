@@ -9,7 +9,8 @@ Shell config for my personal use
 ```sh
 cd $HOME/.config
 
-git clone https://github.com/ppcamp/shell.git
+# needs to be recursive, so it can fetch the submodules
+git clone --recursive https://github.com/ppcamp/shell
 
 mv ~/.zshrc{,.bak}
 
