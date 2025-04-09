@@ -1,6 +1,6 @@
 # vim: ts=4 sts=4 sw=4 noet
 
-debug-tools-install: ## Install usefull debugging tools for debian
+install-debug-tools: ## Install usefull debugging tools for debian
 	sudo apt update
 	sudo apt install g++ make cmake gcc
 	sudo apt install binutils gdb strace lsof file

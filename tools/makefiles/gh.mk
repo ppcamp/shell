@@ -1,6 +1,6 @@
 # vim: ts=4 sts=4 sw=4 noet
 
-gh-install: ## Install github cli
+install-gh: ## Install github cli
 	local file=gh_2.69.deb
 	pushd $(pwd)
 	cd /tmp
@@ -8,12 +8,12 @@ gh-install: ## Install github cli
 	sudo apt install "./$file"
 	popd
 
-gh-configure: ## Configure github cli
+configure-gh: ## Configure github cli
 	gh auth login
 
-gh-copilot-install: ## Install copilot extension for copilot cli
+install-gh-copilot: ## Install copilot extension for copilot cli
 	gh extension install github/gh-copilot
 
-gh-copilot-configure: ## Configure copilot extension for copilot cli
+configure-gh-copilot: ## Configure copilot extension for copilot cli
 	gh copilot auth login
 	@echo "When running outside, need to eval: " "gh copilot alias zsh > $ZSH_CUSTOM/copilot.zsh"
