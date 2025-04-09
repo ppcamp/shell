@@ -3,7 +3,7 @@
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=$HOME/.zsh_history
-
+################################################################################
 # This file is sourced by zshrc
 if [ command -v nvim ] >/dev/null 2>&1; then
   export VISUAL='nvim'
@@ -22,4 +22,15 @@ fi
 # zstyle ':completion:*:git:*' group-order 'main commands' 'alias commands' 'external commands'
 # source <(carapace _carapace zsh)
 
+################################################################################
+# Load asdf
 export ASDF_DIR="$HOME/.config/asdf"
+
+################################################################################
+#                                Load mcfly
+export MCFLY_FUZZY=2
+export MCFLY_KEY_SCHEME=vim
+
+#################################################################################
+#                               Load Autosuggestions configs
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)

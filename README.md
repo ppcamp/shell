@@ -2,6 +2,7 @@
 Shell config for my personal use
 
 [Suggestted programs](https://gist.github.com/ppcamp/91dd1fc9ae5f3c78026617720e26795e)
+[Bash commands](https://gist.github.com/ppcamp/14f3f5cdc71e66d955e21043ec5d27b7)
 
 ## Installation
 
@@ -49,5 +50,7 @@ ZDOTDIR=$HOME zsh -i -c exit  0.10s user 0.08s system 86% cpu 0.217 total
 ZDOTDIR=/tmp/tmp.OLO5gmIGOV zsh -i -c exit  0.04s user 0.05s system 52% cpu 0.185 total
 ```
 
+<!-- # Fetch latest version from GitHub API -->
+<!-- # LATEST_VERSION=$(curl -s https://api.github.com/repos/junegunn/fzf/releases/latest | grep tag_name | cut -d '"' -f 4) -->
 
 [devhints]: https://devhints.io/
