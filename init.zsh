@@ -21,4 +21,4 @@ source "$internal/configs/completions.zsh" # default snippets loading
 
 # zprof #debugging
 
-eval "$(starship init zsh)"
+source "$internal/plugins/starship/starship.zsh" # starship prompt
