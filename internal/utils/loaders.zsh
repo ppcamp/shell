@@ -32,11 +32,11 @@ add_path_if_exist() {
 
 add_path_if_exec() {
   local cmd=$1
-  local path_dir=$2
   # if type "$1" &>/dev/null; then
   if command -v "$cmd" >/dev/null 2>&1; then
-    path_dir=${~path_dir}  # expand ~ and variables
-    [[ ":$PATH:" != *":$path_dir:"* ]] && PATH="$PATH:$path_dir"
+    local path_dir=$(eval "echo $2")
+    # echo "Adding to PATH: $path_dir"
+    PATH="$PATH:$path_dir"
     return 0
   fi
   return 1
