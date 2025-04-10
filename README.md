@@ -17,17 +17,69 @@ mv ~/.zshrc{,.bak}
 # while in the folder where you cloned this repo
 echo "source $PWD/shell/init.zsh" > ~/.zshrc
 ```
-# WARN: https://github.com/disrupted/dotfiles/blob/master/.zshrc
+
+> WARN: https://github.com/disrupted/dotfiles/blob/master/.zshrc
+
 
 
 > [!TIP]
 > Run the make commands to install the tools you need.
 
 > [!NOTE]
-> 
+>
 > Must be cloned directly in the folder that you plan to keep it, and then
 > replace the `~/.zshrc` for this one.
 
+<details><summary><h2>Zshrc config</h2></summary>
+
+Put this at the end of `$HOME/.zshrc` to load the rest of the config
+See `internal/utils/loaders:add_path_if_exec` for more details.
+
+```sh
+############################## Go
+#$ go env GOPATH | xcp
+export PATH="$PATH:$HOME/.asdf/installs/golang/1.24.0/packages"
+############################## Rust crates
+#$ rustc --print sysroot | xargs -I{} realpath "{}/../../bin" | xcp
+export CARGO_FOLDER="$HOME/.asdf/installs/rust/1.85.0/bin"
+export PATH="$PATH:$CARGO_FOLDER"
+############################## node
+#$ npm config get prefix | xcp
+export PATH="$PATH:$HOME/.asdf/installs/nodejs/lts"
+############################## python env
+source "$HOME/.cache/venv/bin/activate"
+```
+
+Example of `$HOME/.zshrc`:
+
+```sh
+# load zen config
+source $HOME/.config/shell/init.zsh
+
+
+############################## Go
+#$ go env GOPATH | xcp
+export PATH="$PATH:/home/asapcard-note-h1y/go"
+############################## Rust crates
+#$ rustc --print sysroot | xargs -I{} realpath "{}/../../bin" | xcp
+# export CARGO_FOLDER=""
+# export PATH="$PATH:$CARGO_FOLDER"
+############################## node
+#$ npm config get prefix | xcp
+export PATH="$PATH:/home/asapcard-note-h1y/.asdf/installs/nodejs/20.18.3"
+
+
+############################# SSH Agent plugin config
+zstyle :omz:plugins:ssh-agent agent-forwarding yes
+zstyle :omz:plugins:ssh-agent lifetime 1h
+zstyle :omz:plugins:ssh-agent identities ~/.ssh/{bitbucket_,sftp_*}
+zstyle :omz:plugins:ssh-agent quiet yes
+
+zinit ice wait"0a" lucid
+zinit light $HOME/.config/shell/plugins/ssh-agent
+```
+
+</details>
 
 ### TODO
 

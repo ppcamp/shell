@@ -23,13 +23,17 @@ load_snippet_if_exist() {
 add_path_if_exist() {
   local dir="$1"
   if [[ -d $dir ]]; then
-    export PATH="$dir:$PATH"
+    export PATH="$PATH:$dir"
     # echo "Added to PATH: $dir"
     return 0
   fi
   return 1
 }
 
+# PERF: prefer to not use this function since it calls eval, and therefore,
+# depends deeply on the response time of starting a shell for the command,
+# executing it and then appending its output.
+# PREFER TO COMMON PATHS COMMANDS.
 add_path_if_exec() {
   local cmd=$1
   # if type "$1" &>/dev/null; then
