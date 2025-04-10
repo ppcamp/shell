@@ -17,6 +17,7 @@ mv ~/.zshrc{,.bak}
 # while in the folder where you cloned this repo
 echo "source $PWD/shell/init.zsh" > ~/.zshrc
 ```
+# WARN: https://github.com/disrupted/dotfiles/blob/master/.zshrc
 
 
 > [!TIP]

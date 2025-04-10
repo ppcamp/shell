@@ -31,20 +31,25 @@ add_path_if_exist() {
 }
 
 add_path_if_exec() {
-  if type "$1" &>/dev/null; then
-    local path_dir
-    eval "path_dir=$2"
-    export PATH="$PATH:$path_dir"
-    # echo "Added to PATH if exec: $path_dir"
+  local cmd=$1
+  local path_dir=$2
+  # if type "$1" &>/dev/null; then
+  if command -v "$cmd" >/dev/null 2>&1; then
+    path_dir=${~path_dir}  # expand ~ and variables
+    [[ ":$PATH:" != *":$path_dir:"* ]] && PATH="$PATH:$path_dir"
     return 0
   fi
   return 1
 }
 
 deinit_loaders() {
-  unset -f load_if_exist
-  unset -f add_path_if_exist
-  unset -f add_path_if_exec
-  unset -f load_snippet_if_exist
-  unset -f deinit_loaders
+  # unset -f
+  unfunction load_if_exist
+  unfunction add_path_if_exist
+  unfunction add_path_if_exec
+  unfunction load_snippet_if_exist
+  unfunction deinit_loaders
 }
+
+# cleanup loaders after first zsh cmd prompt
+add-zsh-hook precmd deinit_loaders

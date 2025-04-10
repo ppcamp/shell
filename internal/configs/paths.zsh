@@ -1,6 +1,5 @@
 # vim: ts=2 sts=2 sw=2 et:
 
-
 ############################## PATH
 # set PATH so it includes user's private bin if it exists
 add_path_if_exist "$HOME/.local/bin"
@@ -16,10 +15,9 @@ add_path_if_exist '/usr/local/go/bin'
 add_path_if_exec 'go' '$(go env GOPATH)/bin'
 
 ############################## Rust crates
-add_path_if_exec 'cargo' '$(rustc --print sysroot | xargs -I{} realpath "{}/../../bin")'
-if [ $? -eq 0 ]; then
-    export CARGO_FOLDER="$(rustc --print sysroot | xargs -I{} realpath "{}/../../bin")"
-fi
+add_path_if_exec 'cargo' \
+  '$(rustc --print sysroot | xargs -I{} realpath "{}/../../bin")' &&
+  export CARGO_FOLDER="$(rustc --print sysroot | xargs -I{} realpath "{}/../../bin")"
 
 ############################## gcloud
 add_path_if_exist '/opt/google-cloud-sdk/bin'

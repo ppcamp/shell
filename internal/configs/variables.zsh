@@ -3,6 +3,8 @@
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=$HOME/.cache/zsh/zsh_history
+ZSH_COMPDUMP="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
+
 ################################################################################
 # This file is sourced by zshrc
 if [ command -v nvim ] >/dev/null 2>&1; then

@@ -1,19 +1,7 @@
 # vim: ts=2 sts=2 sw=2 et:
 #                               Set up the prompt
 
-# Load completions
-# INFO: already done by carapace (see bottom of this file)
-fpath+=(
-  "$ZEN/internal/completions"
-  "$ZEN/internal/plugins/zsh-completions/src"
-)
-
-# Use modern completion system
-autoload -Uz compinit && compinit
-
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -v
-
+bindkey -v # Use vi key bindings
 
 ### History Settings
 setopt SHARE_HISTORY               # Share history between all sessions.
@@ -66,7 +54,3 @@ zstyle ':completion:*' group-name '' # Group similar results together
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-
-
-# WARN: https://github.com/disrupted/dotfiles/blob/master/.zshrc
-
