@@ -2,7 +2,7 @@
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
 SAVEHIST=1000
-HISTFILE=$HOME/.zsh_history
+HISTFILE=$HOME/.cache/zsh/zsh_history
 ################################################################################
 # This file is sourced by zshrc
 if [ command -v nvim ] >/dev/null 2>&1; then

@@ -46,7 +46,7 @@ setopt NO_BANG_HIST        # allow to use ! to see declarative arrays keys
 
 # thanks to https://thevaluable.dev/zsh-completion-guide-examples/
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "\$XDG_CACHE_HOME/zsh/.zcompcache"
+zstyle ':completion:*' cache-path "$HOME/.cache/zsh"
 # zstyle ':completion:*' menu select # Enable menu selection
 # zstyle ':completion:*' menu select=long
 zstyle ':completion:*' menu select=2
