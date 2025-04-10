@@ -96,12 +96,16 @@ zinit light $HOME/.config/shell/plugins/ssh-agent
 
 ### Performance checking
 
-```sh
-~ ❯ time ZDOTDIR=$HOME zsh -i -c exit
-ZDOTDIR=$HOME zsh -i -c exit  0.10s user 0.08s system 86% cpu 0.217 total
+![image](https://github.com/user-attachments/assets/47572735-5adf-442f-b96f-5363b7f6d51c)
 
-~ ❯ time ZDOTDIR=/tmp/tmp.OLO5gmIGOV zsh -i -c exit
-ZDOTDIR=/tmp/tmp.OLO5gmIGOV zsh -i -c exit  0.04s user 0.05s system 52% cpu 0.185 total
+
+> The omzsh version didn't use the `mcfly` history manager, neither `starship` (it evals everytime starship)
+
+```sh
+# time with a custom zsh config
+ZDOTDIR=$HOME/omzsh/ zsh -i -c exit
+# time
+ZDOTDIR=$HOME zsh -i -c exit
 ```
 
 <!-- # Fetch latest version from GitHub API -->
