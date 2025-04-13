@@ -35,10 +35,12 @@ echo "source $PWD/shell/init.zsh" > ~/.zshrc
 Put this at the end of `$HOME/.zshrc` to load the rest of the config
 See `internal/utils/loaders:add_path_if_exec` for more details.
 
+> Check it out the `make configure-paths` command.
+
 ```sh
 ############################## Go
 #$ go env GOPATH | xcp
-export PATH="$PATH:$HOME/.asdf/installs/golang/1.24.0/packages"
+export PATH="$PATH:$HOME/.asdf/installs/golang/1.24.0/packages/bin"
 ############################## Rust crates
 #$ rustc --print sysroot | xargs -I{} realpath "{}/../../bin" | xcp
 export CARGO_FOLDER="$HOME/.asdf/installs/rust/1.85.0/bin"
