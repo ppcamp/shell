@@ -30,8 +30,8 @@ export ASDF_DIR="$HOME/.config/asdf"
 
 ################################################################################
 #                                Load mcfly
-export MCFLY_FUZZY=2
-export MCFLY_KEY_SCHEME=vim
+# export MCFLY_FUZZY=2
+# export MCFLY_KEY_SCHEME=vim
 
 #################################################################################
 #                               Load Autosuggestions configs

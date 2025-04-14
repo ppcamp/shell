@@ -22,6 +22,7 @@ for plugin in $PLUGINS; do
   zinit light "$plugin"
 done
 
+# History searcher with prioritazion mechanism (a bit overkill)
 # https://github.com/cantino/mcfly?tab=readme-ov-file#database-location
-zinit ice lucid wait"0a" from"gh-r" as"program" atload'eval "$(mcfly init zsh)"'
-zinit light cantino/mcfly
+# zinit ice lucid wait"0a" from"gh-r" as"program" atload'eval "$(mcfly init zsh)"'
+# zinit light cantino/mcfly
