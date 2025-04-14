@@ -3,6 +3,12 @@
 
 bindkey -v # Use vi key bindings
 
+# disable terminal control flow (Ctrl+Q and Ctrl+S)
+# This is a very very old way to block terminal consuming keys for serial
+# connections. And when we don't disable this, the terminal may not activate
+# bindkeys that use this keybindings properly.
+stty -ixon
+
 ### History Settings
 setopt SHARE_HISTORY               # Share history between all sessions.
 setopt HIST_EXPIRE_DUPS_FIRST      # Expire a duplicate event first when trimming history.
