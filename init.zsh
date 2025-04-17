@@ -11,8 +11,8 @@ source "${ZINIT_HOME}/zinit.zsh"
 source $ZEN/internal/utils/loaders.zsh # load path loaders functions
 
 # needs to be loaded in this order
-source "$internal/configs/variables.zsh"   # exports
 source "$internal/configs/paths.zsh"       # include paths
+source "$internal/configs/variables.zsh"   # exports
 source "$internal/configs/configs.zsh"     # shell configs
 source "$internal/configs/plugins.zsh"     # zsh plugins loading
 source "$internal/configs/shortcuts.zsh"   # shortcuts

@@ -7,7 +7,7 @@ ZSH_COMPDUMP="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
 
 ################################################################################
 # This file is sourced by zshrc
-if [ command -v nvim ] >/dev/null 2>&1; then
+if command -v nvim >/dev/null 2>&1; then
   export VISUAL='nvim'
   export EDITOR='nvim'
 else
@@ -26,7 +26,7 @@ fi
 
 ################################################################################
 # Load asdf
-export ASDF_DIR="$HOME/.config/asdf"
+# export ASDF_DIR="$HOME/.config/asdf"
 
 ################################################################################
 #                                Load mcfly
